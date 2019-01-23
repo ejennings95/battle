@@ -2,6 +2,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rack/test'
 require 'rspec'
+require_relative './features/web_helpers'
 
 ENV['RACK_ENV'] = 'test'
 
