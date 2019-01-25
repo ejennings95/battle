@@ -1,6 +1,3 @@
-# If you haven't picked this up by now, use of global variables is pretty much Ruby blasphemy, because they can easily crash your program. Since we don't know much about databases, we're allowing this horrible sin in exchange for simplified learning. But don't use them outside of this week. Please.
-require_relative 'app'
-
 class Player
 
   attr_reader :name, :hp
@@ -11,7 +8,27 @@ class Player
   end
 
   def damage
-    @hp - 10
+    @hp -= 10
   end
+
+end
+
+class Game
+
+def initialize(player1, player2)
+  @players = [player1, player2]
+end
+
+def player_1
+  @players.first
+end
+
+def player_2
+  @players.last
+end
+
+def attack(player)
+  player.damage
+ end
 
 end
