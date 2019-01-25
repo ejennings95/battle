@@ -11,15 +11,13 @@ class Battle < Sinatra::Base
   get '/play' do
     session[:count] ||= 0
     @health = (100 - session[:count])
-    @player_1 = session[:player_1]
-    @player_2 = session[:player_2]
     erb(:play)
   end
 
   post '/names' do
     session.clear
-    session[:player_1] = params[:player_1]
-    session[:player_2] = params[:player_2]
+    session[:player_1] = params[:player_1].capitalize
+    session[:player_2] = params[:player_2].capitalize
     redirect '/play'
   end
 

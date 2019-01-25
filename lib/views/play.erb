@@ -1,7 +1,13 @@
-<%= @player_1 %> Vs. <%= @player_2 %> <br />
+<div style="display: flex; flex-direction: column; justify-content: center; height: 100vh;">
+<center>
 
-<%= "#{@player_2} health: #{@health}HP" %> <br />
+<h1>
+<%= session[:player_1] %> Vs. <%= session[:player_2] %> <br />
+</h1>
 
+<h2>
+<%= "#{session[:player_2]} health: #{@health}HP" %> <br />
+</h2>
 
 <form action="/attack" method="post">
     <input type="submit" value="Attack">
@@ -10,3 +16,6 @@
 <form action="/reset" method="post">
     <input type="submit" value="Reset">
 </form>
+
+<center>
+</div>
