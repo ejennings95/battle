@@ -20,6 +20,13 @@ end
     end
   end
 
+  feature 'it should take turns whos turn it is' do
+    scenario 'player one should go first' do
+      sign_in_and_play
+      expect(page).to have_content 'Name1 to go'
+    end
+  end
+
   # feature 'confirmation of attack' do
   #   scenario 'to be able to see a message that I have attacked my opponent' do
   #     sign_in_and_play

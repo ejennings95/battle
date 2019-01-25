@@ -20,11 +20,13 @@ class Battle < Sinatra::Base
     @player_1_name = $new_game.player_1.name.capitalize
     @player_2_name = $new_game.player_2.name.capitalize
     @player_2_health = $new_game.player_2.hp
+    @current_player = $new_game.current_turn.name.capitalize
     erb(:play)
   end
 
   post '/attack' do
     $new_game.attack($new_game.player_2)
+    $new_game.switching_turns
     redirect '/play'
   end
 

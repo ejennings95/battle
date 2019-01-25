@@ -38,4 +38,15 @@ describe Game do
       subject.attack(player_2)
     end
   end
+
+  describe '#switching_turns' do
+    it 'should know whos turn it is to start (player 1)' do
+      expect(game.current_turn).to eq player_1
+    end
+
+    it 'should change current_turn to the opponent' do
+      game.switching_turns
+      expect(game.current_turn).to eq player_2
+    end
+  end
 end
