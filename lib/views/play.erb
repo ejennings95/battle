@@ -2,11 +2,11 @@
 <center>
 
 <h1>
-<%= session[:player_1] %> Vs. <%= session[:player_2] %> <br />
+<%= @player_1_name %> Vs. <%= @player_2_name %> <br />
 </h1>
 
 <h2>
-<%= "#{session[:player_2]} health: #{@health}HP" %> <br />
+<%= "#{@player_2_name} health: #{@player_2_health}HP" %> <br />
 </h2>
 
 <form action="/attack" method="post">

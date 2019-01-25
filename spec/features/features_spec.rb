@@ -20,8 +20,8 @@ end
     end
   end
 
-  feature 'confirmation of attack' do
-    scenario 'to be able to see a message that I have attacked my opponent' do
+  feature 'resets health to 100' do
+    scenario 'if i want to reset the game between two players' do
       sign_in_and_play
       click_button 'Reset'
       expect(page).to have_content 'Name2 health: 100HP'
